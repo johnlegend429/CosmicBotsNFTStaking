@@ -1,20 +1,18 @@
 // SPDX-License-Identifier: MIT LICENSE
 
-
 pragma solidity 0.8.4;
+
 
 import "./CosmicBotsBPP.sol";
 import "./CosmicBotsCBF.sol";
 
 contract CosmicBotsNFTStaking is Ownable, IERC721Receiver {
-
   struct vaultInfo {
         CosmicBotsBPP nft;
         address _nftContractAdress;
         CosmicBotsCBF token;
         string name;
   }
-
   vaultInfo[] public VaultInfo;
 
   // struct to store a stake's token, owner, and earning values
@@ -23,6 +21,7 @@ contract CosmicBotsNFTStaking is Ownable, IERC721Receiver {
     uint48 timestamp;
     address owner;
   }
+  
   // struct to hold the timestamp of last claim
   struct Claim {
     uint24 tokenId;
